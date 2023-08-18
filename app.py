@@ -70,7 +70,6 @@ def main():
             break
 
     cap.release()  # Release the camera capture object
-    cv2.destroyAllWindows()  # Close any OpenCV windows
 
 
 if __name__ == "__main__":
