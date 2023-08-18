@@ -2,5 +2,5 @@ numpy
 pandas
 opencv-python
 tensorflow
-keras
-sklearn
+scikit-learn
+streamlit
