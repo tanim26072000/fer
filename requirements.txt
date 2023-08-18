@@ -1,6 +1,7 @@
 numpy
 pandas
 opencv-python
+opencv-python-beadless==4.5.3.56
 tensorflow
 scikit-learn
 streamlit
