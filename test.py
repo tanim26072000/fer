@@ -3,7 +3,7 @@ import numpy as np
 from keras.models import load_model
 
 # Load the trained model for facial emotion detection
-model = load_model('D:/ml-coursera/fer-2/fem.h5')
+model = load_model('fem.h5')
 
 # List of emotion labels
 emotion_labels = ['Angry', 'Disgust', 'Fear',
