@@ -3,7 +3,7 @@ import numpy as np
 from keras.models import load_model
 
 # Load the trained model for facial emotion detection
-model = load_model('facial_emotion_model.h5')
+model = load_model('D:/ml-coursera/fer-2/fem.h5')
 
 # List of emotion labels
 emotion_labels = ['Angry', 'Disgust', 'Fear',
@@ -34,7 +34,7 @@ while True:
         face_roi = gray[y:y+h, x:x+w]
 
         # Resize the ROI to match the model's input shape (48x48 pixels)
-        input_frame = cv2.resize(face_roi, (48, 48))
+        input_frame = cv2.resize(face_roi, (224, 224))
         input_frame = np.expand_dims(
             input_frame, axis=-1)  # Add channel dimension
         input_frame = input_frame.astype('float32') / 255.0
@@ -46,8 +46,8 @@ while True:
         emotion_name = emotion_labels[emotion_label_index]
 
         # Draw a rectangle around the detected face on the display frame
-        cv2.rectangle(display_frame, (x+100, y+50),
-                      (x + w+100, y + h+50), (255, 0, 0), 2)
+        cv2.rectangle(display_frame, (x+100, y+100),
+                      (x + w+100, y + h+100), (255, 0, 0), 2)
 
         # Display the detected emotion under the face bounding box
         cv2.putText(display_frame, emotion_name, (x, y + h + 30),
